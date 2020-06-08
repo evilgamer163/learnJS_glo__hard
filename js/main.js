@@ -4,10 +4,10 @@
 let lang = '',
     ruDaysWeek = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
     enDaysWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Fridey', 'Saturday', 'Sunday'],
-    weeksArr = [
-        ruDaysWeek,
-        enDaysWeek
-    ],
+    weeksArr = {
+        'ru' : ruDaysWeek,
+        'en' : enDaysWeek
+    },
     namePerson = '';
 
 lang = prompt('Введите значение переменной "lang" (ru/en)');
@@ -44,8 +44,7 @@ switch(lang) {
 }
 
 //Многомерный массив
-let days = lang === 'ru' ? weeksArr[0] : weeksArr [1];
-console.log(days.toString());
+console.log(String(weeksArr[lang]));
 
 
 //<--- Задание № 2 --->
