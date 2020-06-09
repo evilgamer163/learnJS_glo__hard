@@ -1,57 +1,15 @@
-'use strict'
+'use strict';
 
-//Переменные
-let lang = '',
-    ruDaysWeek = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-    enDaysWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Fridey', 'Saturday', 'Sunday'],
-    weeksArr = [
-        ruDaysWeek,
-        enDaysWeek
-    ],
-    namePerson = '';
-
-lang = prompt('Введите значение переменной "lang" (ru/en)');
-
-//Функция перебора массива
-const sortDay = (arr) => {
-    arr.forEach(item => {
-        console.log(item);
-    });
+const getString = (str) => {
+    if(typeof str !== 'string') {
+        alert('Аргумент не является строкой!');
+    } else {
+        if(str.length > 30) {
+            return str.trim().substring(0, 30) + '...';
+        }
+    }
 };
 
+document.write(getString(true));
+document.write(getString('Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nesciunt dolorum nemo facere iusto. Facilis fuga quo veritatis pariatur similique, dolores placeat adipisci dolorum et officiis, tempore deserunt modi iste!'));
 
-//<--- Задание № 1 --->
-//if
-if(lang === 'ru') {
-    sortDay(ruDaysWeek);
-} else if(lang === 'en') {
-    sortDay(enDaysWeek);
-} else {
-    lang = prompt('Введите корректное значение! (ru/en)');
-}
-
-//switch-case
-switch(lang) {
-    case 'ru':
-        sortDay(ruDaysWeek);
-        break;
-    case 'en':
-        sortDay(enDaysWeek);
-        break;
-    default:
-        lang = prompt('Введите корректное значение! (ru/en)');
-        break;
-}
-
-//Многомерный массив
-let days = lang === 'ru' ? weeksArr[0] : weeksArr [1];
-console.log(days.toString());
-
-
-//<--- Задание № 2 --->
-namePerson = prompt('Введите имя:');
-
-let position = (namePerson === 'Артем') ? 'директор' :
-                (namePerson === 'Максим') ? 'преподаватель' : 'студент';
-
-console.log(position);
