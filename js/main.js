@@ -6,10 +6,12 @@ const getString = (str) => {
     } else {
         if(str.length > 30) {
             return str.trim().substring(0, 30) + '...';
+        } else {
+            return str.trim();
         }
     }
 };
 
-document.write(getString(true));
-document.write(getString('Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nesciunt dolorum nemo facere iusto. Facilis fuga quo veritatis pariatur similique, dolores placeat adipisci dolorum et officiis, tempore deserunt modi iste!'));
+document.write(getString('     df12321312312312312'));
+// document.write(getString('Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nesciunt dolorum nemo facere iusto. Facilis fuga quo veritatis pariatur similique, dolores placeat adipisci dolorum et officiis, tempore deserunt modi iste!'));
 
