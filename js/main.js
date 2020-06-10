@@ -6,7 +6,10 @@ let arr = ['74', '21', '53', '44', '28', '32', '77'];
 const numbers = () => {
     let newArr = [];
     for (let i = 0; i < arr.length; i ++) {
-        if(arr[i].indexOf('2') === 0 || arr[i].indexOf('4') === 0) {
+        // if(arr[i].indexOf('2') === 0 || arr[i].indexOf('4') === 0) {
+        //     newArr.push(arr[i]);
+        // }
+        if(arr[i].charAt(0) === '2' || arr[i].charAt(0) === '4') {
             newArr.push(arr[i]);
         }
     }
