@@ -1,17 +1,57 @@
 'use strict';
 
-const getString = (str) => {
-    if(typeof str !== 'string') {
-        alert('Аргумент не является строкой!');
-    } else {
-        if(str.length > 30) {
-            return str.trim().substring(0, 30) + '...';
-        } else {
-            return str.trim();
+//<--- Задание № 1 --->
+let arr = ['74', '21', '53', '44', '28', '32', '77'];
+
+const numbers = () => {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i ++) {
+        if(arr[i].indexOf('2') === 0 || arr[i].indexOf('4') === 0) {
+            newArr.push(arr[i]);
         }
+    }
+
+    return newArr;
+};
+
+console.log(numbers());
+console.log(numbers().toString());
+
+
+//<--- Задание № 2 --->
+let arrNums = [],
+    naturalNums;
+
+//Functions
+const arrayFilling = (arr) => {
+    for(let i = 1; i <=100; i++) {
+        arr[i - 1] = i;
     }
 };
 
-document.write(getString('     df12321312312312312'));
-// document.write(getString('Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio nesciunt dolorum nemo facere iusto. Facilis fuga quo veritatis pariatur similique, dolores placeat adipisci dolorum et officiis, tempore deserunt modi iste!'));
+const isSimpleNum = (number) => {
+    if(number <= 1) {
+        return false;
+    } else if(number === 2) {
+        return true;
+    } else {
+        for(let i = 2; i < number; i++) {
+            if(number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+};
+
+const showNaturalsArray = (arr) => {
+    for(let i = 0; i < arr.length; i++) {
+        console.log(arr[i] + ` Делители этого числа: 1 и ${arr[i]}`);
+    }
+};
+
+// Call functions
+arrayFilling(arrNums);
+naturalNums = arrNums.filter(isSimpleNum);
+showNaturalsArray(naturalNums);
 
