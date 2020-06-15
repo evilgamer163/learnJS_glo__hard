@@ -13,3 +13,11 @@ body {
     margin-top: 100px;
     color: darkslateblue;
 }
+
+.week-list {
+    margin-top: 50px;
+}
+
+.day {
+    font-size: 20px;
+}
