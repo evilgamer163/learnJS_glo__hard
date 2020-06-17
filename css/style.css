@@ -13,3 +13,8 @@ body {
     margin-top: 100px;
     color: darkslateblue;
 }
+
+.today {
+    margin-top: 25px;
+    font-size: 15px;
+}
